@@ -1,3 +1,7 @@
+## Download dependencies
+
+Run `npm install`.
+
 ## Build
 
 Run `npm run build:ssr` to build the project.
