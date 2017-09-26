@@ -15,7 +15,7 @@ export class RecipeEffects {
   recipeFetch = this.actions$
     .ofType(RecipeActions.FETCH_RECIPES)
     .switchMap((action: RecipeActions.FetchRecipes) => {
-      return this.httpClient.get<Recipe[]>('https://ng-recipe-book-3adbb.firebaseio.com/recipes.json', {
+      return this.httpClient.get<Recipe[]>('https://ng-recipe-book-24451.firebaseio.com/recipes.json', {
         observe: 'body',
         responseType: 'json'
       })
@@ -40,7 +40,7 @@ export class RecipeEffects {
     .ofType(RecipeActions.STORE_RECIPES)
     .withLatestFrom(this.store.select('recipes'))
     .switchMap(([action, state]) => {
-      const req = new HttpRequest('PUT', 'https://ng-recipe-book-3adbb.firebaseio.com/recipes.json', state.recipes, {reportProgress: true});
+      const req = new HttpRequest('PUT', 'https://ng-recipe-book-24451.firebaseio.com/recipes.json', state.recipes, {reportProgress: true});
       return this.httpClient.request(req);
     });
 
